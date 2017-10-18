@@ -18,5 +18,11 @@ new Vue({
 	router,
 	template: '<App/>',
 	components: { App },
-	styletron
+	styletron,
+	provide() {
+		return {
+			styletron,
+			theme: {}
+		}
+	}
 })

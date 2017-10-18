@@ -1,54 +1,37 @@
 <template>
-  <div id="app">
-    <header>
-      <span>Vue.js PWA</span>
-    </header>
-    <main>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
+  <app-wrapper id="app">
+    <app-header></app-header>
+    <app-main>
       <router-view></router-view>
-    </main>
-  </div>
+    </app-main>
+  </app-wrapper>
 </template>
 
 <script>
+import AppWrapper from '@/components/AppWrapper'
+import AppHeader from '@/components/AppHeader'
+import AppMain from '@/components/AppMain'
+
 export default {
-  name: 'app'
+	components: {
+		AppWrapper,
+		AppHeader,
+		AppMain
+	}
 }
 </script>
 
 <style>
+@font-face {
+	font-family: lunchtype23italic;
+	src: url('/static/lunchtype23-regular-italic-webfont.woff2') format('woff2');
+}
+
 body {
-  margin: 0;
+	margin: 0;
 }
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-
-main {
-  text-align: center;
-  margin-top: 40px;
-}
-
-header {
-  margin: 0;
-  height: 56px;
-  padding: 0 16px 0 24px;
-  background-color: #35495E;
-  color: #ffffff;
-}
-
-header span {
-  display: block;
-  position: relative;
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: .02em;
-  font-weight: 400;
-  box-sizing: border-box;
-  padding-top: 16px;
+* {
+	font-family: lunchtype23italic;
 }
 </style>
