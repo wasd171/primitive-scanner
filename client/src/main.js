@@ -4,12 +4,19 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import StyletronVue from 'styletron-vue'
+import Styletron from 'styletron'
+
 Vue.config.productionTip = false
+Vue.use(StyletronVue)
+
+const styletron = new Styletron()
 
 /* eslint-disable no-new */
 new Vue({
 	el: '#app',
 	router,
 	template: '<App/>',
-	components: { App }
+	components: { App },
+	styletron
 })
